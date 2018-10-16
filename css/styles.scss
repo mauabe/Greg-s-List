@@ -1,0 +1,157 @@
+$color-link1: navy;
+$color-link2: mediumvioletred;
+$color-visited: palevioletred;
+$color-hover1: dodgerblue;
+$color-hover2: deeppink;
+
+@mixin border-radius($radius){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+%a-text {
+  text-decoration: none;
+  list-style: none; 
+}
+
+a { 
+  color: $color-link2;
+  @extend %a-text;
+}
+a:visited{
+  color: $color-visited;
+  @extend %a-text;
+}
+a:hover{
+  color: $color-hover2;
+  text-decoration: underline;
+}
+
+body {
+  margin:0;
+  padding: 80px;
+  font-family: 'Abel', sans-serif;
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  // width: 100%;
+  height: 50px;
+  margin-bottom: 30px;
+  background-color: #EEEEEE;
+  border-bottom: 1px solid lightgrey;
+  // display: block;
+}
+
+.top-nav {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.top-nav-link {
+  font-size: 18px;
+  padding: 0 6px;
+  // width: 4em;
+  font-family: 'Abel', sans-serif;
+  font-size: 1.2em;
+  @extend %a-text;
+}
+  
+.logo {
+  display: inline-block;
+  font-family: 'Anton', sans-serif;
+  text-decoration: none;
+}
+
+.logo h2 {
+  margin-left: 50px;
+  margin-top: 10px;
+  padding: 0;
+  color: $color-link1;
+  @extend %a-text;
+  text-decoration: none;
+
+  &:hover {
+    color: dodgerblue;
+    text-decoration: none;
+  }
+}
+
+.search-box .search-label {
+  display: block;
+  margin-left: 100px;
+  margin-top: 50px;;
+  margin-bottom: 8px;
+  font-size: 1.5em;
+}
+
+.search-box .search-field, 
+.search-box .search-button {
+  display: inline-block;
+  border: 2px solid lightgrey;
+  @include border-radius(4px);  
+}
+.search-box input {
+  margin-left: 100px;
+  margin-bottom: 10px;
+  font-size: 16px; 
+  width: 400px;
+  height: 35px;
+  padding: 0 5px 0 8px;
+}
+.search-box .search-button {
+  width: 30px;
+  height: 30px;
+  padding: 2px 6px 3px 6px;
+  background-color: white;
+  vertical-align: bottom;
+}
+
+
+.pages {
+  display: inline-block;
+  font-size: 0;
+  border: 2px solid #DDDDDD;
+  background-color: snow;
+  border-radius: 3px;
+  margin-left: 100px;
+  margin-top: 30px;
+}
+
+.pages-button, 
+.pages-display {
+  display: inline-block;
+  font-size: 16px;
+  padding: 8px 25px;
+}
+
+
+.result {
+  padding-top: 10px;
+  margin-left: 100px;
+  border: 0;
+}
+
+.result .result-date,
+.result .result-place {
+  font: lightgrey;
+  width: 20%;
+  padding-top:10px;
+}
+
+.result .result-job{
+  font-weight:bold;
+  padding-left: 10px;
+  padding-right: 20px;
+  width: 60%;
+  padding-top:10px;
+
+}
